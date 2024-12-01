@@ -1,0 +1,194 @@
+/* Configurações básicas */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 10px; /* Adiciona um padding para os elementos não ficarem colados nas bordas */
+}
+
+/* Estilização inicial do título */
+#animated-title {
+    font-size: 2rem; /* Diminui o tamanho para telas menores */
+    margin-bottom: 20px;
+    color: #333;
+    overflow: hidden; /* Garante que o texto não transborde */
+    white-space: nowrap; /* Mantém o texto em uma única linha */
+    border-right: 3px solid #007bff; /* Cursor visível */
+    animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from {
+        width: 0; /* Começa sem texto visível */
+    }
+    to {
+        width: 100%; /* Mostra todo o texto */
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink {
+    from {
+        border-color: transparent; /* Cursor invisível */
+    }
+    to {
+        border-color: #007bff; /* Cursor visível */
+    }
+}
+
+/* Área de busca */
+.search-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: column; /* Organiza os elementos de forma vertical no celular */
+}
+
+/* Input */
+#pes {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 350px; /* Limita a largura máxima */
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#pes:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Placeholder estilizado */
+#pes::placeholder {
+    font-style: italic;
+    color: #aaa;
+}
+
+/* Botão */
+#but {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ocupa toda a largura disponível no celular */
+    max-width: 200px; /* Limita a largura máxima */
+}
+
+#but:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensagem divertida */
+.message {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: -5px;
+    font-style: italic;
+}
+
+/* Cartão */
+.mostrarpaises {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    flex-direction: column; /* Organiza o conteúdo de forma vertical no celular */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%; /* Faz o card ocupar toda a largura disponível */
+    max-width: 400px; /* Limita a largura máxima */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover no card */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Bandeira */
+.flag {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Conteúdo do card */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.card-content p strong {
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    /* Ajuste do título */
+    #animated-title {
+        font-size: 1.8rem; /* Reduz um pouco o tamanho do título para telas muito pequenas */
+    }
+
+    /* Ajustes no card */
+    .card {
+        width: 100%; /* O card ocupa toda a largura da tela */
+    }
+
+    .card-content h2 {
+        font-size: 1.3rem; /* Ajusta o tamanho da fonte do título do card */
+    }
+
+    .card-content p {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto no cartão */
+        line-height: 1.4;
+    }
+
+    /* Ajuste do botão e input */
+    #pes, #but {
+        width: 100%; /* Garante que o input e o botão ocupem toda a largura disponível */
+        max-width: 350px; /* Limita a largura máxima */
+    }
+}
